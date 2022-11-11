@@ -5,17 +5,25 @@ export default StyleSheet.create({
   },
   calendarWrapperAgenda: {
     flex: 1,
+    // marginLeft: 5, 
+    // width: '90%',
+    // paddingRight: 50,
   },
   calendar: {
-    backgroundColor: '#fff',
+    backgroundColor: '',
     borderBottomColor: '#ccc',
-    borderBottomWidth: 1,
-    zIndex: 1
+    // borderBottomWidth: 1,
+    zIndex: 1,
+    marginBottom: -50,
   },
   headerTitle: {
-    alignContent: 'center',
-    textAlign: 'center',
-    flex: 1
+    alignContent: 'left',
+    textAlign: 'left',
+    paddingLeft: 20,
+    flex: 1,
+    fontFamily: 'Arial',
+    fontSize: 16,
+    paddingBottom: 20,
   },
   headerNavigation: {
     paddingHorizontal: 20
@@ -29,13 +37,17 @@ export default StyleSheet.create({
     flex: 1
   },
   week: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    paddingBottom: 20,
+    paddingLeft: 5,
+    paddingRight: 5,
   },
   day: {
     flex: 1,
     position: 'relative',
     paddingVertical: 7,
-    borderRadius: 7
+    borderRadius: 100,
+    height: 35,
   },
   dayTextWrapper: {
     justifyContent: 'center',
@@ -43,11 +55,13 @@ export default StyleSheet.create({
   },
   dayText: {
     textAlign: 'center',
+    fontFamily: 'Arial',
+    fontSize: 16
   },
   dayDisabled: {
     flex: 1,
     paddingVertical: 7,
-    borderRadius: 7,
+    borderRadius: 20,
   },
   dayDisabledText: {
     textAlign: 'center',
@@ -55,18 +69,18 @@ export default StyleSheet.create({
   },
   daySelected: {
     flex: 1,
-    paddingVertical: 7,
-    borderRadius: 7,
-    backgroundColor: 'skyblue',
+    // paddingVertical: 7,
+    borderRadius: 50,
+    backgroundColor: '#dadada',
   },
   daySelectedText: {
     textAlign: 'center',
   },
   expander: {
-    backgroundColor: 'skyblue',
+    backgroundColor: '#2FA2B9',
     width: 50,
     height: 4,
-    borderRadius: 2,
+    borderRadius: 20,
     margin: 5
   },
   expanderAndroid: {
@@ -91,8 +105,8 @@ export default StyleSheet.create({
     bottom: -4,
     width: 4,
     height: 4,
-    borderRadius: 2,
-    backgroundColor: 'skyblue'
+    borderRadius: 20,
+    backgroundColor: '#37BFDA'
   },
   agendaWrapper: {
     backgroundColor: '#fff'
