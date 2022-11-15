@@ -2,12 +2,18 @@ import React from 'react';
 import * as dateFns from 'date-fns'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler';
+import {useServices} from '../../../src/services';
 
 export const defaultEmptyListRenderer = (day) => {
-  return <Text>No items for this date ({dateFns.format(day, 'mm/dd/yyyy')})</Text>
+  return (
+  <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: 250, fontFamily: 'Montreal-Book'}}>
+  <Text style={{ fontFamily: 'Montreal-Medium', color: 'grey'}}>
+    No Events  </Text></View> )
 }
 
-export const defaultItemRenderer = (dayEvents, selectedDate, itemClickHandler) => {
+
+
+export const defaultItemRenderer = (dayEvents, selectedDate) => {
   const itemStyles = {
     listItem: {
       flexDirection: 'row',
@@ -19,6 +25,8 @@ export const defaultItemRenderer = (dayEvents, selectedDate, itemClickHandler) =
     time: {
       paddingHorizontal: 5,
       color: '#ccc',
+      alignItems: 'center',
+      alignContent: 'center',
       fontFamily: 'Montreal-Medium',
       paddingLeft: 10,
     },
@@ -26,42 +34,43 @@ export const defaultItemRenderer = (dayEvents, selectedDate, itemClickHandler) =
       // paddingHorizontal: 5,
       // color: '#ccc',
       fontFamily: 'Montreal-Medium',
-      fontSize: 16,
+      fontSize: 18,
       // paddingLeft: 10,
     },
     timeBox: {
       display: 'flex',
       flexDirection: 'column',
+      justifyContent: 'center',
     },
     vlGreen: {
-      borderLeftWidth: 3,
-      borderRadius: 3,
+      borderLeftWidth: 4,
+      borderRadius: 5,
       borderColor: '#04985A',
-      height: 30,
+      height: 50,
       marginLeft: 15,
       marginTop: 2,
     },
     vlBlue: {
-      borderLeftWidth: 3,
-      borderRadius: 3,
+      borderLeftWidth: 4,
+      borderRadius: 5,
       borderColor: '#2FA2B9',
-      height: 30,
+      height: 50,
       marginLeft: 15,
       marginTop: 2,
     },
     vlBlueLight: {
-      borderLeftWidth: 3,
-      borderRadius: 3,
+      borderLeftWidth: 4,
+      borderRadius: 5,
       borderColor: '#37BFDA',
-      height: 30,
+      height: 50,
       marginLeft: 15,
       marginTop: 2,
     },
     vlBlueDark: {
-      borderLeftWidth: 3,
-      borderRadius: 3,
+      borderLeftWidth: 4,
+      borderRadius: 5,
       borderColor: '#dd0606',
-      height: 30,
+      height: 50,
       marginLeft: 15,
       marginTop: 2,
     },
@@ -71,7 +80,7 @@ export const defaultItemRenderer = (dayEvents, selectedDate, itemClickHandler) =
     const timeStart = dateFns.setMinutes(dateFns.setHours(selectedDate, item.timeStart.hour), item.timeStart.minute)
     const timeEnd = dateFns.setMinutes(dateFns.setHours(selectedDate, item.timeEnd.hour), item.timeEnd.minute)
     return (
-    <TouchableOpacity key={i} onPress={() => itemClickHandler(item, selectedDate)}>
+    <TouchableOpacity key={i} onPress={item.itemClickHandler }>
       <View style={itemStyles.listItem}>
       {item.type == 'open_house' &&  <View style={itemStyles.vlGreen}></View>}
       {item.type == 'private_showing' &&  <View style={itemStyles.vlBlue}></View>}
@@ -86,12 +95,16 @@ export const defaultItemRenderer = (dayEvents, selectedDate, itemClickHandler) =
         </Text>
         </View>
         <View style={{display: 'flex', alignItems: 'center',width: 250, paddingLeft: 10, flexDirection: 'row'}}>
-        
+        <View style={{display: 'flex', flexDirection: 'column'}}>
         <Text style={itemStyles.event}>{item.title}</Text>
         <Text>{item.description}</Text>
+        <Text style={{marginTop: -10}}>{item.address}</Text>
+        </View>
         </View>
       </View>
     </TouchableOpacity>
     )}
   )
 }
+
+

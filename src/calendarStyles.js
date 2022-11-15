@@ -5,23 +5,19 @@ export default StyleSheet.create({
   },
   calendarWrapperAgenda: {
     flex: 1,
-    // marginLeft: 5, 
-    // width: '90%',
-    // paddingRight: 50,
   },
   calendar: {
     backgroundColor: '',
     borderBottomColor: '#ccc',
-    // borderBottomWidth: 1,
     zIndex: 1,
-    marginBottom: -50,
+    // marginBottom: -50,
   },
   headerTitle: {
-    alignContent: 'left',
-    textAlign: 'left',
-    paddingLeft: 20,
+    textAlign: 'center',
     flex: 1,
-    fontFamily: 'Arial',
+    fontFamily: 'Montreal-Bold',
+    fontWeight: 'bold',
+    color: '#2FA2B9',
     fontSize: 16,
     paddingBottom: 20,
   },
@@ -34,6 +30,8 @@ export default StyleSheet.create({
   },
   weekDay: {
     textAlign: 'center',
+    color: '#000',
+    fontFamily: 'Montreal-Bold',
     flex: 1
   },
   week: {
@@ -56,6 +54,8 @@ export default StyleSheet.create({
   dayText: {
     textAlign: 'center',
     fontFamily: 'Arial',
+    fontWeight: 'bold',
+    color: '#2FA2B9',
     fontSize: 16
   },
   dayDisabled: {
@@ -71,7 +71,7 @@ export default StyleSheet.create({
     flex: 1,
     // paddingVertical: 7,
     borderRadius: 50,
-    backgroundColor: '#dadada',
+    backgroundColor: 'rgba(47,162,185,0.2)',
   },
   daySelectedText: {
     textAlign: 'center',
@@ -84,7 +84,7 @@ export default StyleSheet.create({
     margin: 5
   },
   expanderAndroid: {
-    borderColor: 'skyblue',
+    borderColor: 'skyblue', 
     width: 40,
     height: 17,
   },
@@ -106,7 +106,7 @@ export default StyleSheet.create({
     width: 4,
     height: 4,
     borderRadius: 20,
-    backgroundColor: '#37BFDA'
+    backgroundColor: '#fff'
   },
   agendaWrapper: {
     backgroundColor: '#fff'
