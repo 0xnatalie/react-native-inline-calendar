@@ -15,11 +15,11 @@ export default StyleSheet.create({
   headerTitle: {
     textAlign: 'center',
     flex: 1,
-    fontFamily: 'Montreal-Bold',
-    fontWeight: 'bold',
-    color: '#2FA2B9',
+    fontFamily: 'RobotoCondensed-Bold',
+    color: '#6E7B62',
     fontSize: 16,
     paddingBottom: 20,
+    marginTop: -10,
   },
   headerNavigation: {
     paddingHorizontal: 20
@@ -31,7 +31,7 @@ export default StyleSheet.create({
   weekDay: {
     textAlign: 'center',
     color: '#000',
-    fontFamily: 'Montreal-Bold',
+    fontFamily: 'RobotoCondensed-Bold',
     flex: 1
   },
   week: {
@@ -53,9 +53,9 @@ export default StyleSheet.create({
   },
   dayText: {
     textAlign: 'center',
-    fontFamily: 'Arial',
+    fontFamily: 'RobotoCondensed-Regular',
     fontWeight: 'bold',
-    color: '#2FA2B9',
+    color: '#6E7B62',
     fontSize: 16
   },
   dayDisabled: {
@@ -71,7 +71,7 @@ export default StyleSheet.create({
     flex: 1,
     // paddingVertical: 7,
     borderRadius: 50,
-    backgroundColor: 'rgba(47,162,185,0.2)',
+    backgroundColor: 'rgba(255,255,255,0.9)',
   },
   daySelectedText: {
     textAlign: 'center',
@@ -112,3 +112,4 @@ export default StyleSheet.create({
     backgroundColor: '#fff'
   }
 })
+

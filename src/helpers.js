@@ -24,16 +24,16 @@ export const defaultItemRenderer = (dayEvents, selectedDate) => {
     },
     time: {
       paddingHorizontal: 5,
-      color: '#ccc',
+      color: '#000',
       alignItems: 'center',
       alignContent: 'center',
-      fontFamily: 'Montreal-Medium',
+      fontFamily: 'RobotoCondensed-Regular',
       paddingLeft: 10,
     },
     event: {
       // paddingHorizontal: 5,
       // color: '#ccc',
-      fontFamily: 'Montreal-Medium',
+      fontFamily: 'RobotoCondensed-Regular',
       fontSize: 18,
       // paddingLeft: 10,
     },
@@ -106,5 +106,6 @@ export const defaultItemRenderer = (dayEvents, selectedDate) => {
     )}
   )
 }
+
 
 
