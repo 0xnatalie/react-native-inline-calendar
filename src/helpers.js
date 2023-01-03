@@ -6,8 +6,8 @@ import {useServices} from '../../../src/services';
 
 export const defaultEmptyListRenderer = (day) => {
   return (
-  <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: 250, fontFamily: 'Montreal-Book'}}>
-  <Text style={{ fontFamily: 'Montreal-Medium', color: 'grey'}}>
+  <View style={{display: 'flex', backgroundColor: '#F5F5F5', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', height: 450, fontFamily: 'Montreal-Book'}}>
+  <Text style={{ fontFamily: 'Montreal-Medium', color: 'grey',}}>
     No Events  </Text></View> )
 }
 
@@ -17,9 +17,9 @@ export const defaultItemRenderer = (dayEvents, selectedDate) => {
   const itemStyles = {
     listItem: {
       flexDirection: 'row',
-      paddingVertical: 17,
+      paddingVertical: 15,
       borderBottomColor: '#efefef',
-      fontFamily: 'Montreal-Bold',
+      fontFamily: 'Roboto-Bold',
       borderBottomWidth: 1
     },
     time: {
@@ -27,13 +27,13 @@ export const defaultItemRenderer = (dayEvents, selectedDate) => {
       color: '#000',
       alignItems: 'center',
       alignContent: 'center',
-      fontFamily: 'RobotoCondensed-Regular',
+      fontFamily: 'Roboto-Regular',
       paddingLeft: 10,
     },
     event: {
       // paddingHorizontal: 5,
       // color: '#ccc',
-      fontFamily: 'RobotoCondensed-Regular',
+      fontFamily: 'Roboto-Regular',
       fontSize: 18,
       // paddingLeft: 10,
     },
@@ -45,7 +45,7 @@ export const defaultItemRenderer = (dayEvents, selectedDate) => {
     vlGreen: {
       borderLeftWidth: 4,
       borderRadius: 5,
-      borderColor: '#04985A',
+      borderColor: '#000000',
       height: 50,
       marginLeft: 15,
       marginTop: 2,
@@ -53,7 +53,7 @@ export const defaultItemRenderer = (dayEvents, selectedDate) => {
     vlBlue: {
       borderLeftWidth: 4,
       borderRadius: 5,
-      borderColor: '#2FA2B9',
+      borderColor: '#A1BdBd',
       height: 50,
       marginLeft: 15,
       marginTop: 2,
@@ -61,7 +61,7 @@ export const defaultItemRenderer = (dayEvents, selectedDate) => {
     vlBlueLight: {
       borderLeftWidth: 4,
       borderRadius: 5,
-      borderColor: '#37BFDA',
+      borderColor: '#6E7B62',
       height: 50,
       marginLeft: 15,
       marginTop: 2,
@@ -69,7 +69,15 @@ export const defaultItemRenderer = (dayEvents, selectedDate) => {
     vlBlueDark: {
       borderLeftWidth: 4,
       borderRadius: 5,
-      borderColor: '#dd0606',
+      borderColor: '#63191D',
+      height: 50,
+      marginLeft: 15,
+      marginTop: 2,
+    },
+    blDealFlow: {
+      borderLeftWidth: 4,
+      borderRadius: 5,
+      borderColor: '#636360',
       height: 50,
       marginLeft: 15,
       marginTop: 2,
@@ -86,6 +94,7 @@ export const defaultItemRenderer = (dayEvents, selectedDate) => {
       {item.type == 'private_showing' &&  <View style={itemStyles.vlBlue}></View>}
       {item.type == 'call' &&  <View style={itemStyles.vlBlueLight}></View>}
       {item.type == 'deal_flow' &&  <View style={itemStyles.vlBlueDark}></View>}
+      {item.type == 'other' &&  <View style={itemStyles.blDealFlow}></View>}
         <View style={itemStyles.timeBox}>
         <Text style={itemStyles.time}>
           {dateFns.format(timeStart, timeFormat)} 
@@ -106,6 +115,7 @@ export const defaultItemRenderer = (dayEvents, selectedDate) => {
     )}
   )
 }
+
 
 
 
